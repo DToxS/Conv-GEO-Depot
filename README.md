@@ -72,15 +72,15 @@ The workflow of this computational pipeline for analyzing the conventional mRNA-
 
 ### Sequence Alignment
 
-Refer to the `README` file of the <u>Sequence-Alignment</u> section.
+Refer to the [Sequence Alignment](https://github.com/DToxS/Sequence-Alignment) section.
 
 ### Feature Counts
 
-Refer to the `README` file of the <u>Feature-Counts</u> section.
+Refer to the [Feature Counts](https://github.com/DToxS/Feature-Counts) section.
 
 ### Differential Comparison
 
-Refer to the `README` file of the <u>Differential-Comparison</u> section.
+Refer to the [Differential Comparison](https://github.com/DToxS/Differential-Comparison) section.
 
 ## Result Data
 
