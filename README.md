@@ -28,7 +28,7 @@ The computational pipeline requires a list of input datasets and a tree structur
 
 The input datasets for the computational pipeline include:
 
-- A set of compressed mRNA-sequencing *FASTQ* data files (**.fastq.gz*)
+- A set of compressed mRNA-sequencing *FASTQ* data files (`*.fastq.gz`)
 - The experiment design file `Conv-RNAseq-Experiment-Design.tsv.gz`
 - The *UCSC* human genome reference library `Reference-Library.tar.gz`
 - The data analysis programs `Program-Source-Codes.tar.gz`
@@ -64,7 +64,7 @@ Before launching the computational pipeline, a directory tree with corresponding
     - Extract `Differential-Comparison-Configs.tar.gz` into the `Configs` directory.
     - Extract `Differential-Comparison-Params.tar.gz` into the `Params` directory.
 
-4. Set the variable `DATASET_DIR` in all shell scripts (**.sh*) and the variable `dataset_dir` in the *R* program `Convert-Conv-RNAseq-Reads.GEO.R` under all the sub-directories of the `Programs` directory to the absolute path of the `Conv-GEO-Depot` top directory.
+4. Set the variable `DATASET_DIR` in all shell scripts (`*.sh`) and the variable `dataset_dir` in the *R* program `Convert-Conv-RNAseq-Reads.GEO.R` under all the sub-directories of the `Programs` directory to the absolute path of the `Conv-GEO-Depot` top directory.
 
 ## Analysis Workflow
 
