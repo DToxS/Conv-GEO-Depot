@@ -7,18 +7,18 @@ This is a computational pipeline designed for analyzing the raw *FASTQ* data fil
 The computational pipeline requires the following software programs:
 
 - *Bash* shell in Unix-like operating systems (e.g. Linux, MacOS, Unix)
-- *STAR* (version 2.5.3a)
-- *featureCounts* (from *Subread* v1.6.2)
-- *R* (version >= 3.0.0) with the following packages:
-    - *cluster*
-    - *edgeR*
-    - *gplots*
-    - *graphics*
-    - *matrixStats*
-    - *methods*
-    - *RColorBrewer*
-    - *stats*
-    - *tools*
+- *STAR* (>= v2.5.3a)
+- *featureCounts* (from *Subread* >= v1.6.2)
+- *R* (>= v3.0.0) with the following packages:
+  - *cluster*
+  - *edgeR*
+  - *gplots*
+  - *graphics*
+  - *matrixStats*
+  - *methods*
+  - *RColorBrewer*
+  - *stats*
+  - *tools*
 
 ## Data Preparation
 
@@ -40,31 +40,24 @@ The input datasets for the computational pipeline include:
 Before launching the computational pipeline, a directory tree with corresponding data files needs to be created in the following steps:
 
 1. Create a top directory `Conv-GEO-Depot` with the following tree structure:
-
-    ```
-    Conv-GEO-Depot
-    ├── Seqs
-    ├── Aligns
-    ├── Counts
-    ├── References
-    ├── Programs
-    ├── Configs
-    ├── Params
-    ├── Scripts
-    └── Results
-    ```
-
+   ```
+   Conv-GEO-Depot
+   ├── Seqs
+   ├── Aligns
+   ├── Counts
+   ├── References
+   ├── Programs
+   ├── Configs
+   ├── Params
+   └── Scripts
+   ```
 2. Place all gzipped *FASTQ* data files in the `Seqs` directory. 
-
 3. Extract the following compressed data files into corresponding directories:
-
-    - Extract `Conv-RNAseq-Experiment-Design.tsv.gz` into the `Counts` directory.
-    - Extract `Reference-Library.tar.gz` into the `References` directory.
-    - Extract `Program-Source-Codes.tar.gz` into the `Programs` directory.
-    - Extract `Differential-Comparison-Configs.tar.gz` into the `Configs` directory.
-    - Extract `Differential-Comparison-Params.tar.gz` into the `Params` directory.
-
-4. Set the variable `DATASET_DIR` in all shell scripts (`*.sh`) and the variable `dataset_dir` in the *R* program `Convert-Conv-RNAseq-Reads.GEO.R` under all the sub-directories of the `Programs` directory to the absolute path of the `Conv-GEO-Depot` top directory.
+   - Extract `Conv-RNAseq-Experiment-Design.tsv.gz` into the `Counts` directory.
+   - Extract `Reference-Library.tar.gz` into the `References` directory.
+   - Extract `Program-Source-Codes.tar.gz` into the `Programs` directory.
+   - Extract `Differential-Comparison-Configs.tar.gz` into the `Configs` directory.
+   - Extract `Differential-Comparison-Params.tar.gz` into the `Params` directory.
 
 ## Analysis Workflow
 
@@ -85,4 +78,5 @@ Refer to the [Differential Comparison](https://github.com/DToxS/Differential-Com
 ## Result Data
 
 - A table of uniquely aligned sequence reads for all reference genes and all sequenced samples `Conv-RNAseq-Read-Counts.tsv` in the `Counts` directory (compressed as `Conv-RNAseq-Read-Counts.tsv.gz`).
-- A set of statistical comparison results for DEGs for all drug treatments and all cell lines `Human-[Cell Line]-Hour-48-Plate-[Plate Number]-Calc.CTRL-[Drug Name].tsv` in the `Results/FDR-[Value]` directory (compressed as `DEG-Calc-FDR-0.1.tar.gz`).
+- A set of statistical comparison result files for the DEGs identified at all drug treatments and in all cell lines with a file name pattern of `Human-[Cell Line]-Hour-48-Plate-[Plate Number]-Calc.CTRL-[Drug Name].tsv`, located in the `Results/FDR-[Value]` directory under the `Conv-GEO-Depot` top directory.
+
